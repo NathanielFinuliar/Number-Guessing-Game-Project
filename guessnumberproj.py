@@ -43,3 +43,5 @@ class stack_count_score():
         num_group = []
         while len(self.picked_number_blow) > 0:
             num_group.append(self.picked_number_blow.pop())
+
+        for element in num_group:
