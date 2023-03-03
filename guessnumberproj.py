@@ -16,3 +16,8 @@ class stack_count_score():
         self.blowcal()
     
     def set_dictionary(self):
+        for i in self.current_number:
+            if i not in self.set_used.keys():
+                self.set_used[i] = 1
+            else:
+                self.set_used[i] += 1
