@@ -59,3 +59,9 @@ class stack_count_score():
     def get_total(self):
         return ((self.count_hit) * 0.75) + ((self.count_blow)*0.25)
         
+
+
+class Play_queue():
+
+    def __init__(self):
+        self.queue = []
