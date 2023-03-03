@@ -216,3 +216,11 @@ while len(queue) >= 0 and not found_winner:
                             print(f"You got {player_hit} Hits {player_blow} Blows result in {player_total} points!")
                             data[name] += player_total
                         elif guess_num.upper() == 'H':
+                            if not helped:
+                                helped = True
+                                help(num_gen)
+                            else:
+                                print("You already asked for help")
+                            continue
+                        break
+                    
