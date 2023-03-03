@@ -124,3 +124,6 @@ class Bot():
 
     def get_score(self):
         score = stack_count_score(self.current_number,self.name,self.choosed_num)
+        self.score = score.get_total()
+        self.count_hit = score.get_hit()
+        self.score_blow = score.get_blow()
