@@ -206,3 +206,6 @@ while len(queue) >= 0 and not found_winner:
                     print("="*5+" Win!!!! You got the correct number : "+num_gen+"!!! "+"="*5)
                     found_winner = True
                     break
+                else:
+                    if (guess_num.isdigit() and len(guess_num) == k) or guess_num.lower() == 'h':
+                        if guess_num.isdigit():
