@@ -179,3 +179,4 @@ while len(num_gen) != k: # Generate num
 bot = Bot(num_gen)
 data = {name:0, bot.name:0 }
 queue_option = Play_queue()
+queue = queue_option.generate_queue(n,[name,bot.name])
