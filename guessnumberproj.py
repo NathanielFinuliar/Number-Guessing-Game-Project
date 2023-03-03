@@ -35,3 +35,5 @@ class stack_count_score():
 
         for first,second in pair_check:
             if first == second:
+                self.count_hit += 1
+                self.set_used[first] -= 1
