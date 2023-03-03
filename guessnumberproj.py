@@ -181,3 +181,5 @@ data = {name:0, bot.name:0 }
 queue_option = Play_queue()
 queue = queue_option.generate_queue(n,[name,bot.name])
 found_winner = False
+while len(queue) >= 0 and not found_winner:
+    print(("-"*10)+" * "*5+("-"*10))
