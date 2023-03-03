@@ -170,3 +170,9 @@ print()
 play_round = 0
 num_gen = ''
 helped = False
+
+while len(num_gen) != k: # Generate num
+    num = rd.randint(0,9)
+    num = str(num)
+    num_gen += num
+
