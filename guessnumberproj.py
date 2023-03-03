@@ -187,3 +187,5 @@ while len(queue) >= 0 and not found_winner:
         print("="*50)
         print()
         print("Game ended!")
+        winner_name = ""
+        winner_score = 0
