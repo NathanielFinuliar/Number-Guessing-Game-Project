@@ -103,3 +103,15 @@ def binarySearch(arr, l, r, x):
             return binarySearch(arr, mid + 1, r, x)    
     else:
         return -1 
+    
+
+#########################################################
+class Bot():
+
+    def __init__(self,current_number):
+        self.name = "Computer"
+        self.current_number = current_number
+        self.choosed_num = ""
+        self.score = 0
+        self.count_hit = 0
+        self.count_blow = 0
