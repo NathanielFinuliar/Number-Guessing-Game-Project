@@ -11,3 +11,6 @@ class stack_count_score():
         self.set_used = {}
         self.count_hit = 0
         self.count_blow = 0
+        self.set_dictionary()
+        self.hitcal()
+        self.blowcal()
