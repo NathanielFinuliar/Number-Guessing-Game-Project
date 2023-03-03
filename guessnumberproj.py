@@ -21,3 +21,8 @@ class stack_count_score():
                 self.set_used[i] = 1
             else:
                 self.set_used[i] += 1
+
+    def hitcal(self):
+                
+        self.stack_hit = [i for i in self.current_number]
+        self.picked_number_hit = [i for i in self.picked_number]
