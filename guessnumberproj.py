@@ -197,3 +197,6 @@ while len(queue) >= 0 and not found_winner:
         print("="*5+" The correct number was "+num_gen+"!!!! "+"="*5)
         print("-"*50)
         break
+    else:
+        if queue[0] == name:
+            print(f"{queue[0]}'s Turn!")
