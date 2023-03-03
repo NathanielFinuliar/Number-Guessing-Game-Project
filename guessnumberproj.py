@@ -89,3 +89,5 @@ def selection_sort(x : list):
         for search in range(pin+1,len(x)):
             if int(x[less_index]) > int(x[search]):
                 less_index = int(search)
+        x[pin],x[less_index] = x[less_index],x[pin]
+    return x
