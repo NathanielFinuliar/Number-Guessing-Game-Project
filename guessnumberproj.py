@@ -189,3 +189,7 @@ while len(queue) >= 0 and not found_winner:
         print("Game ended!")
         winner_name = ""
         winner_score = 0
+        for name,score in data.items():
+            if score > winner_score:
+                winner_name = name
+                winner_score = score
