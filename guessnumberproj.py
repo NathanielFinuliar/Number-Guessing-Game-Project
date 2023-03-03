@@ -153,3 +153,16 @@ def help(current_num):
         print(f"Sadly, {user_choice} is not in guessed number")
     else:
         print(f"Found {user_choice} in guessed number")
+
+
+print("="*25+' Welcome to the guessing game '+"="*25)
+print("If you want help on guessing digits type \"H\"")
+print('-'*60)
+
+fname = input("Enter First name: ")
+lname = input("Enter Last name: ")
+name = fname + " " + lname
+k = int(input('How many digits do you want to guess?: ',))
+n = int(input("How many rounds do you wanna try? : "))
+print("="*80)
+print()    
