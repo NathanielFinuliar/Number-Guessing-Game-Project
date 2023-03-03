@@ -85,3 +85,7 @@ class Play_queue():
 
 def selection_sort(x : list):
     less_index = 0
+    for pin in range(len(x)):
+        for search in range(pin+1,len(x)):
+            if int(x[less_index]) > int(x[search]):
+                less_index = int(search)
