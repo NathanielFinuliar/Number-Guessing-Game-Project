@@ -136,3 +136,6 @@ class Bot():
     
     def bot_blow(self):
         return self.score_blow
+    
+    def bot_score(self):
+        return self.score
