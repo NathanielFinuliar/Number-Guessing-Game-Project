@@ -121,3 +121,5 @@ class Bot():
             num = rd.randint(0,9)
             num = str(num)
             self.choosed_num += num
+
+    def get_score(self):
