@@ -49,3 +49,6 @@ class stack_count_score():
                 if element in self.set_used.keys() and self.set_used[element] != 0:
                     self.count_blow += 1
                     self.set_used[element] -= 1
+        
+        def get_hit(self):
+            return self.count_hit
