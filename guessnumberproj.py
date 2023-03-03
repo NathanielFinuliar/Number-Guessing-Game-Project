@@ -37,3 +37,6 @@ class stack_count_score():
             if first == second:
                 self.count_hit += 1
                 self.set_used[first] -= 1
+
+    def blowcal(self):
+        self.picked_number_blow = [i for i in self.picked_number]
