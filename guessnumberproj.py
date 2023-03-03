@@ -223,4 +223,5 @@ while len(queue) >= 0 and not found_winner:
                                 print("You already asked for help")
                             continue
                         break
-                    
+                    else:
+                        print("Invalid input try again!")                   
