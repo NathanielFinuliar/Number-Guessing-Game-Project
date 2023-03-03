@@ -47,3 +47,5 @@ class stack_count_score():
         for element in num_group:
             if element in self.current_number:
                 if element in self.set_used.keys() and self.set_used[element] != 0:
+                    self.count_blow += 1
+                    self.set_used[element] -= 1
