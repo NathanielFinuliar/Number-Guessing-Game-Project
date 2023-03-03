@@ -28,3 +28,7 @@ class stack_count_score():
         self.picked_number_hit = [i for i in self.picked_number]
         pair_check = []
         while len(self.stack_hit)  > 0:
+            pair = []
+            pair.append(self.stack_hit.pop())
+            pair.append(self.picked_number_hit.pop())
+            pair_check.append(pair)
