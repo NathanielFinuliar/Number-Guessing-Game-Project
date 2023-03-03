@@ -69,3 +69,9 @@ class Play_queue():
     def generate_queue(self,round_,players):
         self.round_ = round_
         self.players = players
+        i = 0
+        while i < self.round_:
+            for player in self.players:
+                self.queue.append(player)
+        i+=1
+        return self.queue
