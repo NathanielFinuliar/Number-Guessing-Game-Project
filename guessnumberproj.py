@@ -215,4 +215,4 @@ while len(queue) >= 0 and not found_winner:
                             player_total = player_score.get_total()
                             print(f"You got {player_hit} Hits {player_blow} Blows result in {player_total} points!")
                             data[name] += player_total
-                        
+                        elif guess_num.upper() == 'H':
