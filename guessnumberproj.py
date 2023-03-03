@@ -97,3 +97,5 @@ def binarySearch(arr, l, r, x):
         mid = l + (r - l) // 2
         if arr[mid] == x:
             return mid
+        elif arr[mid] > x:
+            return binarySearch(arr, l, mid-1, x)
