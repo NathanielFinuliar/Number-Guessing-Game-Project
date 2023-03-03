@@ -115,3 +115,5 @@ class Bot():
         self.score = 0
         self.count_hit = 0
         self.count_blow = 0
+
+    def get_number(self):
