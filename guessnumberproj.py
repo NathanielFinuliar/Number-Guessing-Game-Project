@@ -165,4 +165,8 @@ name = fname + " " + lname
 k = int(input('How many digits do you want to guess?: ',))
 n = int(input("How many rounds do you wanna try? : "))
 print("="*80)
-print()    
+print()
+
+play_round = 0
+num_gen = ''
+helped = False
