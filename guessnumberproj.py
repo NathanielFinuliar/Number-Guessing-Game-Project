@@ -41,3 +41,5 @@ class stack_count_score():
     def blowcal(self):
         self.picked_number_blow = [i for i in self.picked_number]
         num_group = []
+        while len(self.picked_number_blow) > 0:
+            num_group.append(self.picked_number_blow.pop())
