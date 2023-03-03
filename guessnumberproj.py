@@ -80,3 +80,8 @@ class Play_queue():
         self.queue_ = queue_
         self.queue_.pop(0)
         return self.queue_
+    
+
+
+def selection_sort(x : list):
+    less_index = 0
