@@ -202,3 +202,7 @@ while len(queue) >= 0 and not found_winner:
             print(f"{queue[0]}'s Turn!")
             while True:
                 guess_num = input(f"Enter {k} digits number: ")[:k:]
+                if guess_num == num_gen:
+                    print("="*5+" Win!!!! You got the correct number : "+num_gen+"!!! "+"="*5)
+                    found_winner = True
+                    break
