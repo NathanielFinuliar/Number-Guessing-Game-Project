@@ -177,3 +177,4 @@ while len(num_gen) != k: # Generate num
     num_gen += num
 
 bot = Bot(num_gen)
+data = {name:0, bot.name:0 }
