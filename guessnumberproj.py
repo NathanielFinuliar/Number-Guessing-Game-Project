@@ -91,3 +91,6 @@ def selection_sort(x : list):
                 less_index = int(search)
         x[pin],x[less_index] = x[less_index],x[pin]
     return x
+
+def binarySearch(arr, l, r, x):
+    
