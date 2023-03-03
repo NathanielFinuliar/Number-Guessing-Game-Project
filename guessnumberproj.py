@@ -130,3 +130,6 @@ class Bot():
 
     def delete_previous(self):
         self.choosed_num = ""
+
+    def bot_hit(self):
+        return self.count_hit
