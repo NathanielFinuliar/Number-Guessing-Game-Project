@@ -52,3 +52,6 @@ class stack_count_score():
         
         def get_hit(self):
             return self.count_hit
+        
+        def get_blow(self):
+            return self.count_blow
