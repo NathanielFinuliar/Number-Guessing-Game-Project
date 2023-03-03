@@ -117,3 +117,7 @@ class Bot():
         self.count_blow = 0
 
     def get_number(self):
+        while len(self.choosed_num) < len(self.current_number):
+            num = rd.randint(0,9)
+            num = str(num)
+            self.choosed_num += num
