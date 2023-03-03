@@ -224,4 +224,6 @@ while len(queue) >= 0 and not found_winner:
                             continue
                         break
                     else:
-                        print("Invalid input try again!")                   
+                        print("Invalid input try again!")      
+        elif queue[0] == bot.name:
+            print("Bot Turn!")
