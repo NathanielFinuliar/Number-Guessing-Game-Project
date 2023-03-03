@@ -143,3 +143,7 @@ class Bot():
 def help(current_num):
     print("Seem like you need some help!")
     user_choice = input("Type in the number that you think it's in guessed number: ")
+    num_section = []
+    for i in range(0,len(current_num),len(user_choice)):
+        num_section.append(current_num[i:i+len(user_choice)])
+    print(f"Doing search with {len(user_choice)} length sections: ")
