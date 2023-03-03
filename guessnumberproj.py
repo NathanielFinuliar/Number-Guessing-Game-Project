@@ -139,3 +139,7 @@ class Bot():
     
     def bot_score(self):
         return self.score
+    
+def help(current_num):
+    print("Seem like you need some help!")
+    user_choice = input("Type in the number that you think it's in guessed number: ")
