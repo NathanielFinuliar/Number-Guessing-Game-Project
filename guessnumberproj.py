@@ -149,3 +149,7 @@ def help(current_num):
     print(f"Doing search with {len(user_choice)} length sections: ")
     num_section_sorted = selection_sort(list(map(int,num_section)))
     find = binarySearch(num_section_sorted,int(user_choice),0,len(num_section_sorted) - 1)
+    if find != -1:
+        print(f"Sadly, {user_choice} is not in guessed number")
+    else:
+        print(f"Found {user_choice} in guessed number")
