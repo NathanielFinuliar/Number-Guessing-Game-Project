@@ -209,3 +209,10 @@ while len(queue) >= 0 and not found_winner:
                 else:
                     if (guess_num.isdigit() and len(guess_num) == k) or guess_num.lower() == 'h':
                         if guess_num.isdigit():
+                            player_score = stack_count_score(num_gen,name,guess_num)
+                            player_hit = player_score.get_hit()
+                            player_blow = player_score.get_blow()
+                            player_total = player_score.get_total()
+                            print(f"You got {player_hit} Hits {player_blow} Blows result in {player_total} points!")
+                            data[name] += player_total
+                        
