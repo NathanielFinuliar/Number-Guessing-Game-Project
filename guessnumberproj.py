@@ -65,3 +65,7 @@ class Play_queue():
 
     def __init__(self):
         self.queue = []
+
+    def generate_queue(self,round_,players):
+        self.round_ = round_
+        self.players = players
