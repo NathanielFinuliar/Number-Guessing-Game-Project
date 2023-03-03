@@ -50,11 +50,12 @@ class stack_count_score():
                     self.count_blow += 1
                     self.set_used[element] -= 1
         
-        def get_hit(self):
-            return self.count_hit
+    def get_hit(self):
+        return self.count_hit
+    
+    def get_blow(self):
+        return self.count_blow
+    
+    def get_total(self):
+        return ((self.count_hit) * 0.75) + ((self.count_blow)*0.25)
         
-        def get_blow(self):
-            return self.count_blow
-        
-        def get_total(self):
-            return ((self.count_hit) * 0.75) + ((self.count_blow)*0.25)
