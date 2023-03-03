@@ -148,4 +148,4 @@ def help(current_num):
         num_section.append(current_num[i:i+len(user_choice)])
     print(f"Doing search with {len(user_choice)} length sections: ")
     num_section_sorted = selection_sort(list(map(int,num_section)))
-
+    find = binarySearch(num_section_sorted,int(user_choice),0,len(num_section_sorted) - 1)
