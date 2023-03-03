@@ -14,3 +14,5 @@ class stack_count_score():
         self.set_dictionary()
         self.hitcal()
         self.blowcal()
+    
+    def set_dictionary(self):
