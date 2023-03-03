@@ -200,3 +200,5 @@ while len(queue) >= 0 and not found_winner:
     else:
         if queue[0] == name:
             print(f"{queue[0]}'s Turn!")
+            while True:
+                guess_num = input(f"Enter {k} digits number: ")[:k:]
