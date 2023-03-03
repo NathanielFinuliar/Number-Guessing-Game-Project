@@ -123,3 +123,4 @@ class Bot():
             self.choosed_num += num
 
     def get_score(self):
+        score = stack_count_score(self.current_number,self.name,self.choosed_num)
