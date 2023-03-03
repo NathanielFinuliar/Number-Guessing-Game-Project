@@ -183,3 +183,7 @@ queue = queue_option.generate_queue(n,[name,bot.name])
 found_winner = False
 while len(queue) >= 0 and not found_winner:
     print(("-"*10)+" * "*5+("-"*10))
+    if len(queue) == 0:
+        print("="*50)
+        print()
+        print("Game ended!")
