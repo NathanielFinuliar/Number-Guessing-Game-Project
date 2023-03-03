@@ -32,3 +32,6 @@ class stack_count_score():
             pair.append(self.stack_hit.pop())
             pair.append(self.picked_number_hit.pop())
             pair_check.append(pair)
+
+        for first,second in pair_check:
+            if first == second:
