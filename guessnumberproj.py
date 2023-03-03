@@ -127,3 +127,6 @@ class Bot():
         self.score = score.get_total()
         self.count_hit = score.get_hit()
         self.score_blow = score.get_blow()
+
+    def delete_previous(self):
+        self.choosed_num = ""
