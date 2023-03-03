@@ -193,3 +193,7 @@ while len(queue) >= 0 and not found_winner:
             if score > winner_score:
                 winner_name = name
                 winner_score = score
+        print(f"The Winner is {winner_name} with the score {winner_score} points!")
+        print("="*5+" The correct number was "+num_gen+"!!!! "+"="*5)
+        print("-"*50)
+        break
