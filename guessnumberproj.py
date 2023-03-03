@@ -93,4 +93,4 @@ def selection_sort(x : list):
     return x
 
 def binarySearch(arr, l, r, x):
-    
+    if r >= l:
