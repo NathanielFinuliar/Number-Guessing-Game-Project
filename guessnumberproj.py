@@ -176,3 +176,4 @@ while len(num_gen) != k: # Generate num
     num = str(num)
     num_gen += num
 
+bot = Bot(num_gen)
