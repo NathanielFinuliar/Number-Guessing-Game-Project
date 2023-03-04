@@ -227,3 +227,5 @@ while len(queue) >= 0 and not found_winner:
                         print("Invalid input try again!")      
         elif queue[0] == bot.name:
             print("Bot Turn!")
+            bot.get_number()
+            bot_pick = bot.choosed_num
