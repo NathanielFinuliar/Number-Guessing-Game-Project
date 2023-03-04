@@ -73,7 +73,7 @@ class Play_queue():
         while i < self.round_:
             for player in self.players:
                 self.queue.append(player)
-        i+=1
+            i+=1
         return self.queue
     
     def delete_queue(self,queue_):
