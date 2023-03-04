@@ -152,7 +152,7 @@ def help(current_num):
     if find != -1:
         print(f"Sadly, {user_choice} is not in guessed number")
     else:
-        print(f"Found {user_choice} in guessed number")
+        print(f"Found {user_choice} in guessed number") 
 
 
 print("="*25+' Welcome to the guessing game '+"="*25)
