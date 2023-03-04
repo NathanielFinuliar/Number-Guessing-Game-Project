@@ -242,3 +242,5 @@ while len(queue) >= 0 and not found_winner:
                 data[bot.name] += bot_score
                 bot.delete_previous()
         queue = queue_option.delete_queue(queue)
+        play_round += 1
+        print()
