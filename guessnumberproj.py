@@ -232,3 +232,11 @@ while len(queue) >= 0 and not found_winner:
             if bot_pick == num_gen:
                 print("="*5+" Win!!!! "+bot.name+" got the correct number : "+num_gen+"!!! "+"="*5)
                 found_winner = True
+            else:
+                bot.get_score()
+                bot_hit = bot.bot_hit()
+                bot_blow = bot.bot_blow()
+                bot_score = bot.bot_score()
+                print(f"*** {bot.name} guessed {bot_pick} ***")
+                print(f"{bot.name} got {bot_hit} Hits {bot_blow} Blows result in {bot_score} points!")
+                data[bot.name] += bot_score
