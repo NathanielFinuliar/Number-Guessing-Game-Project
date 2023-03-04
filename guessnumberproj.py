@@ -229,3 +229,6 @@ while len(queue) >= 0 and not found_winner:
             print("Bot Turn!")
             bot.get_number()
             bot_pick = bot.choosed_num
+            if bot_pick == num_gen:
+                print("="*5+" Win!!!! "+bot.name+" got the correct number : "+num_gen+"!!! "+"="*5)
+                found_winner = True
