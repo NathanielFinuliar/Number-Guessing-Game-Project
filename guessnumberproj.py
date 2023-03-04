@@ -23,7 +23,7 @@ class stack_count_score():
                 self.set_used[i] += 1
 
     def hitcal(self):
-                
+        
         self.stack_hit = [i for i in self.current_number]
         self.picked_number_hit = [i for i in self.picked_number]
         pair_check = []
@@ -49,23 +49,23 @@ class stack_count_score():
                 if element in self.set_used.keys() and self.set_used[element] != 0:
                     self.count_blow += 1
                     self.set_used[element] -= 1
-        
+
     def get_hit(self):
         return self.count_hit
     
     def get_blow(self):
-        return self.count_blow
+        return self.count_blow 
     
     def get_total(self):
         return ((self.count_hit) * 0.75) + ((self.count_blow)*0.25)
-        
+    
 
-
+    
 class Play_queue():
 
     def __init__(self):
         self.queue = []
-
+    
     def generate_queue(self,round_,players):
         self.round_ = round_
         self.players = players
@@ -80,7 +80,7 @@ class Play_queue():
         self.queue_ = queue_
         self.queue_.pop(0)
         return self.queue_
-    
+        
 
 
 def selection_sort(x : list):
@@ -100,10 +100,10 @@ def binarySearch(arr, l, r, x):
         elif arr[mid] > x:
             return binarySearch(arr, l, mid-1, x)
         else:
-            return binarySearch(arr, mid + 1, r, x)    
+            return binarySearch(arr, mid + 1, r, x)
     else:
-        return -1 
-    
+        return -1
+
 
 #########################################################
 class Bot():
@@ -111,7 +111,7 @@ class Bot():
     def __init__(self,current_number):
         self.name = "Computer"
         self.current_number = current_number
-        self.choosed_num = ""
+        self.choosed_num = "9999"
         self.score = 0
         self.count_hit = 0
         self.count_blow = 0
@@ -121,7 +121,7 @@ class Bot():
             num = rd.randint(0,9)
             num = str(num)
             self.choosed_num += num
-
+            
     def get_score(self):
         score = stack_count_score(self.current_number,self.name,self.choosed_num)
         self.score = score.get_total()
@@ -133,13 +133,13 @@ class Bot():
 
     def bot_hit(self):
         return self.count_hit
-    
+
     def bot_blow(self):
         return self.score_blow
     
     def bot_score(self):
         return self.score
-    
+
 def help(current_num):
     print("Seem like you need some help!")
     user_choice = input("Type in the number that you think it's in guessed number: ")
@@ -168,7 +168,7 @@ print("="*80)
 print()
 
 play_round = 0
-num_gen = ''
+num_gen = '1221'
 helped = False
 
 while len(num_gen) != k: # Generate num
@@ -189,14 +189,18 @@ while len(queue) >= 0 and not found_winner:
         print("Game ended!")
         winner_name = ""
         winner_score = 0
-        for name,score in data.items():
-            if score > winner_score:
-                winner_name = name
-                winner_score = score
-        print(f"The Winner is {winner_name} with the score {winner_score} points!")
-        print("="*5+" The correct number was "+num_gen+"!!!! "+"="*5)
-        print("-"*50)
-        break
+        if len(set(data.values()))== 1:
+                print("Draw")
+                break
+        else:
+            for name,score in data.items():
+                if score > winner_score:
+                    winner_name = name
+                    winner_score = score
+            print(f"The Winner is {winner_name} with the score {winner_score} points!")
+            print("="*5+" The correct number was "+num_gen+"!!!! "+"="*5)
+            print("-"*50)
+            break
     else:
         if queue[0] == name:
             print(f"{queue[0]}'s Turn!")
@@ -224,7 +228,7 @@ while len(queue) >= 0 and not found_winner:
                             continue
                         break
                     else:
-                        print("Invalid input try again!")      
+                        print("Invalid input try again!")
         elif queue[0] == bot.name:
             print("Bot Turn!")
             bot.get_number()
