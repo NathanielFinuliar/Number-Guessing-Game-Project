@@ -240,3 +240,5 @@ while len(queue) >= 0 and not found_winner:
                 print(f"*** {bot.name} guessed {bot_pick} ***")
                 print(f"{bot.name} got {bot_hit} Hits {bot_blow} Blows result in {bot_score} points!")
                 data[bot.name] += bot_score
+                bot.delete_previous()
+        queue = queue_option.delete_queue(queue)
