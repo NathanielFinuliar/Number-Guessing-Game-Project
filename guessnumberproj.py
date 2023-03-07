@@ -84,12 +84,12 @@ class Play_queue():
 
 
 def selection_sort(x : list):
-    less_index = 0
     for pin in range(len(x)):
+        less_index = 0
         for search in range(pin+1,len(x)):
-            if int(x[less_index]) > int(x[search]):
-                less_index = int(search)
-        x[pin],x[less_index] = x[less_index],x[pin]
+            if x[less_index]  >  x[search]:
+                less_index = search
+            x[pin],x[less_index] = x[less_index],x[pin]
     return x
 
 def binarySearch(arr, l, r, x):
@@ -111,7 +111,7 @@ class Bot():
     def __init__(self,current_number):
         self.name = "Computer"
         self.current_number = current_number
-        self.choosed_num = "9999"
+        self.choosed_num = ""
         self.score = 0
         self.count_hit = 0
         self.count_blow = 0
@@ -149,10 +149,10 @@ def help(current_num):
     print(f"Doing search with {len(user_choice)} length sections: ")
     num_section_sorted = selection_sort(list(map(int,num_section)))
     find = binarySearch(num_section_sorted,int(user_choice),0,len(num_section_sorted) - 1)
-    if find != -1:
+    if find == -1:
         print(f"Sadly, {user_choice} is not in guessed number")
     else:
-        print(f"Found {user_choice} in guessed number") 
+        print(f"Found {user_choice} in guessed number")
 
 
 print("="*25+' Welcome to the guessing game '+"="*25)
@@ -168,7 +168,7 @@ print("="*80)
 print()
 
 play_round = 0
-num_gen = '1221'
+num_gen = ''
 helped = False
 
 while len(num_gen) != k: # Generate num
@@ -205,7 +205,7 @@ while len(queue) >= 0 and not found_winner:
         if queue[0] == name:
             print(f"{queue[0]}'s Turn!")
             while True:
-                guess_num = input(f"Enter {k} digits number: ")[:k:]
+                guess_num = input(f"Enter {k} digits number or \"H\" for help : ")[:k:]
                 if guess_num == num_gen:
                     print("="*5+" Win!!!! You got the correct number : "+num_gen+"!!! "+"="*5)
                     found_winner = True
