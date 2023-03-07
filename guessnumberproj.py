@@ -141,34 +141,38 @@ class Bot():
         return self.score
 
 def help(current_num):
-    print("Seem like you need some help!")
-    user_choice = input("Type in the number that you think it's in guessed number: ")
+    print("\n\t\t   Seem like you need some help!")
+    user_choice = input("\t\t   Type in the number that you think it's in guessed number: ")
     num_section = []
     for i in range(0,len(current_num),len(user_choice)):
         num_section.append(current_num[i:i+len(user_choice)])
-    print(f"Doing search with {len(user_choice)} length sections: ")
+    print(f"\n\t\t   Doing search with {len(user_choice)} length sections... ")
     num_section_sorted = selection_sort(list(map(int,num_section)))
     find = binarySearch(num_section_sorted,int(user_choice),0,len(num_section_sorted) - 1)
     if find == -1:
-        print(f"Sadly, {user_choice} is not in guessed number")
+        print(f"\n\t\t   Sadly, {user_choice} is not in guessed number")
     else:
-        print(f"Found {user_choice} in guessed number")
+        print(f"\t\t\t Found {user_choice} in guessed number")
 
+print("")
+print("\t\t","="*25+'  WELCOME TO  '+"="*26)
+print("\t\t","#"*20 +'  NUMBER GUESSING GAME! '+"#"*21)
+print("\t\t"," "*13+'  ✯✯✯ PREPARE TO GET HIT AND BLOW ✯✯✯  '+" "*20)
+print("\n\t\t","~"*15 +'  programmed by Nathaniel Finuliar  '+"~"*14)
 
-print("="*25+' Welcome to the guessing game '+"="*25)
-print("If you want help on guessing digits type \"H\"")
-print('-'*60)
+print("\n\n\t\t  If you want help on guessing digits type \"H\"")
+print("\t\t",'-'*65)
 
-fname = input("Enter First name: ")
-lname = input("Enter Last name: ")
+fname = input("\t\t  Enter First name: ")
+lname = input("\t\t  Enter Last name: ")
 name = fname + " " + lname
-k = int(input('How many digits do you want to guess?: ',))
-n = int(input("How many rounds do you wanna try? : "))
-print("="*80)
+k = int(input('\n\t\t  How many digits do you want to guess?: ',))
+n = int(input("\t\t  How many rounds do you wanna try? : "))
+print("\t\t",'-'*65)
 print()
 
 play_round = 0
-num_gen = ''
+num_gen = ' '
 helped = False
 
 while len(num_gen) != k: # Generate num
@@ -182,32 +186,35 @@ queue_option = Play_queue()
 queue = queue_option.generate_queue(n,[name,bot.name])
 found_winner = False
 while len(queue) >= 0 and not found_winner:
-    print(("-"*10)+" * "*5+("-"*10))
+    # print("\t\t ----------" + " * "*3+ "-----------")
     if len(queue) == 0:
-        print("="*50)
+        print("\t\t", "="*65)
         print()
-        print("Game ended!")
+        print("\t\t\t\t\t  GAME ENDED!")
         winner_name = ""
         winner_score = 0
         if len(set(data.values()))== 1:
-                print("Draw")
+                print("\t\t\t\t\t\t DRAW!")
+                print("\t\t  Unfortunately Both Players didn't guessed the random Number")
+                print("\t\t\t\t\t Better Luck Next Time!")
+
                 break
         else:
             for name,score in data.items():
                 if score > winner_score:
                     winner_name = name
                     winner_score = score
-            print(f"The Winner is {winner_name} with the score {winner_score} points!")
-            print("="*5+" The correct number was "+num_gen+"!!!! "+"="*5)
-            print("-"*50)
+            print(f"\n\t\t  The Winner is ✯ ✯ ✯ {winner_name} ✯ ✯ ✯ with the score {winner_score} points!")
+            print("\n\t\t\t"," "*5+"The correct number was"+num_gen+" ✔")            
+            print("")
             break
     else:
         if queue[0] == name:
-            print(f"{queue[0]}'s Turn!")
+            print(f"\t\t  {queue[0]}'s Turn!")
             while True:
-                guess_num = input(f"Enter {k} digits number or \"H\" for help : ")[:k:]
+                guess_num = input(f"\n\t\t  Enter {k} digits number or \"H\" for help:  ")[:k:]
                 if guess_num == num_gen:
-                    print("="*5+" Win!!!! You got the correct number : "+num_gen+"!!! "+"="*5)
+                    print("\t\t", "="*5+" Win!!!! You got the correct number : "+num_gen+"!!! "+"="*5)
                     found_winner = True
                     break
                 else:
@@ -217,32 +224,32 @@ while len(queue) >= 0 and not found_winner:
                             player_hit = player_score.get_hit()
                             player_blow = player_score.get_blow()
                             player_total = player_score.get_total()
-                            print(f"You got {player_hit} Hits {player_blow} Blows result in {player_total} points!")
+                            print(f"\t\t  You got {player_hit} Hits {player_blow} Blows result in {player_total} points!")
                             data[name] += player_total
                         elif guess_num.upper() == 'H':
                             if not helped:
                                 helped = True
                                 help(num_gen)
                             else:
-                                print("You already asked for help")
+                                print("\t\t  You already asked for help")
                             continue
                         break
                     else:
-                        print("Invalid input try again!")
+                        print("\t\t  Invalid input try again!")
         elif queue[0] == bot.name:
-            print("Bot Turn!")
+            print("\t\t  Bot Turn!")
             bot.get_number()
             bot_pick = bot.choosed_num
             if bot_pick == num_gen:
-                print("="*5+" Win!!!! "+bot.name+" got the correct number : "+num_gen+"!!! "+"="*5)
+                print("\t\t     ","="*5+" Win!!!! "+bot.name+" got the correct number : "+num_gen+"!!! "+"="*5)
                 found_winner = True
             else:
                 bot.get_score()
                 bot_hit = bot.bot_hit()
                 bot_blow = bot.bot_blow()
                 bot_score = bot.bot_score()
-                print(f"*** {bot.name} guessed {bot_pick} ***")
-                print(f"{bot.name} got {bot_hit} Hits {bot_blow} Blows result in {bot_score} points!")
+                print(f"\n\t\t  {bot.name} guessed {bot_pick} ")
+                print(f"\t\t  {bot.name} got {bot_hit} Hits {bot_blow} Blows result in {bot_score} points!")
                 data[bot.name] += bot_score
                 bot.delete_previous()
         queue = queue_option.delete_queue(queue)
