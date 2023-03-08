@@ -162,7 +162,7 @@ def help(current_num):
         i+=1
 
     print(f"\n\t\t  Doing search with {len(user_choice)} length sections... ")
-    print("\t\t ", num_section) #to print sections of users input digit
+    # print("\t\t ", num_section) #to print sections of users input digit
     num_section = list(map(int,num_section))
     num_section_sorted = selection_sort(num_section)
 
