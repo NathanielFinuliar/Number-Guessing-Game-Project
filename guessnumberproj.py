@@ -162,6 +162,7 @@ def help(current_num):
         i+=1
 
     print(f"\n\t\t  Doing search with {len(user_choice)} length sections... ")
+    print("\t\t ", num_section) #to print sections of users input digit
     num_section = list(map(int,num_section))
     num_section_sorted = selection_sort(num_section)
 
@@ -189,12 +190,14 @@ print("\t\t",'-'*65)
 print()
 
 play_round = 0
-num_gen = ''
+# num_gen = '12345'
+num_gen =''
 helped = False
 while len(num_gen) != k: # Generate num
     num = rd.randint(0,9)
     num = str(num)
     num_gen += num
+# print("\t\t  Random number is: " + num_gen, "\n")
 
 
 bot = Bot(num_gen)
@@ -203,7 +206,6 @@ queue_option = Play_queue()
 queue = queue_option.generate_queue(n,[name,bot.name])
 found_winner = False
 while len(queue) >= 0 and not found_winner:
-    # print("\t\t ----------" + " * "*3+ "-----------")
     if len(queue) == 0:
         print("\t\t", "="*65)
         print()
@@ -221,7 +223,7 @@ while len(queue) >= 0 and not found_winner:
                 if score > winner_score:
                     winner_name = name
                     winner_score = score
-            print(f"\n\t\t  The Winner is ✯ ✯ ✯ {winner_name} ✯ ✯ ✯ with the score {winner_score} points!")
+            print(f"\n\t\t  The Winner is ✯ ✯ ✯ {winner_name} ✯ ✯ ✯ with the score of {winner_score} points!")
             print("\n\t\t\t"," "*8+"The correct number was "+num_gen+" ✔")            
             print("")
             break
@@ -231,7 +233,7 @@ while len(queue) >= 0 and not found_winner:
             while True:
                 guess_num = input(f"\n\t\t  Enter {k} digits number or \"H\" for help:  ")[:k:]
                 if guess_num == num_gen:
-                    print("\t\t", "="*5+" Win!!!! You got the correct number : "+num_gen+"!!! "+"="*5)
+                    print("\t\t", "✯"*4+" Win!!!! You got the correct number : "+num_gen+"!!! "+"✯"*4)
                     found_winner = True
                     break
                 else:
