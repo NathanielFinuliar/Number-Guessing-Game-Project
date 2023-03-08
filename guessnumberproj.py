@@ -85,7 +85,7 @@ class Play_queue():
 
 def selection_sort(x : list):
     for pin in range(len(x)):
-        less_index = 0
+        less_index = pin
         for search in range(pin+1,len(x)):
             if x[less_index]  >  x[search]:
                 less_index = search
@@ -141,16 +141,33 @@ class Bot():
         return self.score
 
 def help(current_num):
-    print("\n\t\t   Seem like you need some help!")
-    user_choice = input("\t\t   Type in the number that you think it's in guessed number: ")
+    print("\n\t\t  Seem like you need some help!")
+
+    while True:
+        user_choice = input("\t\t  Type in the number that you think it's in guessed number: ")
+        if len(user_choice) > len(current_num):
+            print("\n\t\t  Invalid input! try again!!!")
+        else:
+            break
+
     num_section = []
-    for i in range(0,len(current_num),len(user_choice)):
-        num_section.append(current_num[i:i+len(user_choice)])
-    print(f"\n\t\t   Doing search with {len(user_choice)} length sections... ")
-    num_section_sorted = selection_sort(list(map(int,num_section)))
-    find = binarySearch(num_section_sorted,int(user_choice),0,len(num_section_sorted) - 1)
+    i = 0
+    while i < len(current_num)-(len(user_choice)-1):
+        j = i
+        section = ''
+        while len(section) < len(user_choice) and j < len(current_num):
+            section += current_num[j]
+            j+=1
+        num_section.append(section)
+        i+=1
+
+    print(f"\n\t\t  Doing search with {len(user_choice)} length sections... ")
+    num_section = list(map(int,num_section))
+    num_section_sorted = selection_sort(num_section)
+
+    find = binarySearch(num_section_sorted,0,len(num_section_sorted) - 1,int(user_choice))
     if find == -1:
-        print(f"\n\t\t   Sadly, {user_choice} is not in guessed number")
+        print(f"\n\t\t  Sadly, {user_choice} is not in guessed number")
     else:
         print(f"\t\t\t Found {user_choice} in guessed number")
 
@@ -172,13 +189,13 @@ print("\t\t",'-'*65)
 print()
 
 play_round = 0
-num_gen = ' '
+num_gen = ''
 helped = False
-
 while len(num_gen) != k: # Generate num
     num = rd.randint(0,9)
     num = str(num)
     num_gen += num
+
 
 bot = Bot(num_gen)
 data = {name:0, bot.name:0 }
@@ -194,10 +211,10 @@ while len(queue) >= 0 and not found_winner:
         winner_name = ""
         winner_score = 0
         if len(set(data.values()))== 1:
-                print("\t\t\t\t\t\t DRAW!")
-                print("\t\t  Unfortunately Both Players didn't guessed the random Number")
-                print("\t\t\t\t\t Better Luck Next Time!")
-
+                print("\t\t\t\t\t     DRAW!")
+                print("\n\t\t  Unfortunately Both Players didn't guess the correct random Number")
+                print("\t\t\t\t     Better Luck Next Time!")
+                print("\n\t\t\t"," "*8+"The correct number was "+num_gen+" ✔")  
                 break
         else:
             for name,score in data.items():
@@ -205,7 +222,7 @@ while len(queue) >= 0 and not found_winner:
                     winner_name = name
                     winner_score = score
             print(f"\n\t\t  The Winner is ✯ ✯ ✯ {winner_name} ✯ ✯ ✯ with the score {winner_score} points!")
-            print("\n\t\t\t"," "*5+"The correct number was"+num_gen+" ✔")            
+            print("\n\t\t\t"," "*8+"The correct number was "+num_gen+" ✔")            
             print("")
             break
     else:
