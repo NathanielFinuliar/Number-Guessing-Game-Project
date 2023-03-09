@@ -1,6 +1,6 @@
 import random as rd
 
-############# DSA's functions #############
+############# DSA's Functions #############
 class stack_count_score():
 
     def __init__(self,current_number,name,picked_number):
@@ -231,7 +231,7 @@ while len(queue) >= 0 and not found_winner:
         if queue[0] == name:
             print(f"\t\t  {queue[0]}'s Turn!")
             while True:
-                guess_num = input(f"\n\t\t  Enter {k} digits number or \"H\" for help:  ")[:k:]
+                guess_num = input(f"\n\t\t  Enter {k} digits number or \"H\" for help:  ")
                 if guess_num == num_gen:
                     print("\t\t", "✯"*4+" Win!!!! You got the correct number : "+num_gen+"!!! "+"✯"*4)
                     found_winner = True
